@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/constLayreciever"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:maxWidth="270dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:layout_alignParentEnd="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/chooseImg"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="8dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/recieverImage"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="centerCrop"
+            app:riv_oval="true"
+            android:padding="2dp"
+            android:layout_gravity="center"
+            android:background="@drawable/image_section"
+            android:src="@drawable/myimage"
+            android:layout_alignParentStart="true"/>
 
         <TextView
             android:id="@+id/receiverMessage"
@@ -19,28 +41,20 @@
             android:background="@drawable/received_message"
             android:fontFamily="sans-serif-condensed-medium"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:layout_toEndOf="@+id/recieverImage"/>
+            android:textSize="18sp"/>
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/recieverImage"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:scaleType="centerCrop"
-        app:riv_oval="true"
-        android:padding="2dp"
-        android:layout_gravity="center"
-        android:background="@drawable/image_section"
-        android:src="@drawable/myimage"
-        android:layout_alignParentStart="true"/>
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/chooseImg"
-        android:layout_width="270dp"
-        android:layout_height="270dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="#1D1D1D"
         android:src="@drawable/myimage"
-        android:layout_below="@id/recieverImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll"
+        app:layout_constraintWidth_max="270dp"
+        app:layout_constraintHeight_max="270dp"
         android:visibility="visible"/>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

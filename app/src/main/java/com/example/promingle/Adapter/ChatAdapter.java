@@ -55,29 +55,26 @@ public class ChatAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         MessageModel messageModel = messageModelArrayList.get(position);
         if (holder.getClass() == SenderViewHolder.class){
+
             SenderViewHolder viewHolder = (SenderViewHolder) holder;
             viewHolder.senderMessage.setText(messageModel.getMessage());
-             Picasso.get().load(SenderImage).into(viewHolder.senderImage);
-             Picasso.get().load(messageModel.getAttachments()).into(viewHolder.chooseImg);
-
-             if ( messageModel.getMessage() == null || messageModel.getMessage().isEmpty() ) {
-                 viewHolder.senderMessage.setVisibility(View.INVISIBLE);
-             } else {
-                 viewHolder.senderMessage.setVisibility(View.VISIBLE);
-             }
+            if ( messageModel.getMessage() == null || messageModel.getMessage().isEmpty() ) {
+                viewHolder.senderMessage.setVisibility(View.INVISIBLE);
+            } else {
+                viewHolder.senderMessage.setVisibility(View.VISIBLE);
+            }
 
             if (messageModel.getAttachments() == null) {
                 viewHolder.chooseImg.setVisibility(View.INVISIBLE);
             } else {
                 viewHolder.chooseImg.setVisibility(View.VISIBLE);
             }
+             Picasso.get().load(SenderImage).into(viewHolder.senderImage);
+             Picasso.get().load(messageModel.getAttachments()).into(viewHolder.chooseImg);
 
         } else {
             ReceiverViewHolder viewHolder = (ReceiverViewHolder) holder;
             viewHolder.receiverMessage.setText(messageModel.getMessage());
-            Picasso.get().load(ReceiverImage).into(viewHolder.recieverImage);
-            Picasso.get().load(messageModel.getAttachments()).into(viewHolder.chooseImg);
-
             if ( messageModel.getMessage() == null || messageModel.getMessage().isEmpty()) {
                 viewHolder.receiverMessage.setVisibility(View.INVISIBLE);
             } else {
@@ -89,7 +86,8 @@ public class ChatAdapter extends RecyclerView.Adapter {
             } else {
                 viewHolder.chooseImg.setVisibility(View.VISIBLE);
             }
-
+            Picasso.get().load(ReceiverImage).into(viewHolder.recieverImage);
+            Picasso.get().load(messageModel.getAttachments()).into(viewHolder.chooseImg);
         }
     }
 
