@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1D1D1D">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/textCreateAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:text="Create New Account"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/LayoutImage"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:scaleType="centerCrop"
+            app:riv_oval="true"
+            android:background="@drawable/image_section"
+            android:padding="8dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/textCreateAcc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/UsenameLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Name"
+            app:startIconDrawable="@drawable/user"
+            app:startIconTint="#626262"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintTop_toBottomOf="@id/LayoutImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <EditText
+                android:id="@+id/CreateAccUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:background="@drawable/enter_section" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/EmailLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter Email"
+            app:startIconDrawable="@drawable/mail"
+            app:startIconTint="#626262"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintTop_toBottomOf="@id/UsenameLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <EditText
+                android:id="@+id/CreateAccNewEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textSize="17sp"
+                android:textColor="@color/white"
+                android:background="@drawable/enter_section" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/PassLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter new Password"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white"
+            app:startIconTint="#626262"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/white"
+            app:startIconDrawable="@drawable/pass_lock"
+            app:layout_constraintTop_toBottomOf="@id/EmailLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <EditText
+                android:id="@+id/CreateAccNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:background="@drawable/enter_section"
+                android:inputType="textPassword"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ConfirmPassLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white"
+            app:startIconTint="#626262"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/white"
+            app:startIconDrawable="@drawable/pass_lock"
+            app:layout_constraintTop_toBottomOf="@id/PassLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <EditText
+                android:id="@+id/CreateAccConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:background="@drawable/enter_section"
+                android:inputType="textPassword"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SignUp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintTop_toTopOf="@id/SignInButtonLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/SignInButtonLayout"/>
+
+        <FrameLayout
+            android:id="@+id/SignInButtonLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:animateLayoutChanges="true"
+            app:layout_constraintTop_toBottomOf="@id/ConfirmPassLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/CreateAccSigUpButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/next_button"
+                android:contentDescription="Sign Up"/>
+
+            <ProgressBar
+                android:id="@+id/CreateAccProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:visibility="invisible"/>
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/BackToLoginButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Back to LogIn"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:backgroundTint="#1E273D"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintTop_toBottomOf="@id/SignInButtonLayout"
+            app:layout_constraintBottom_toTopOf="@id/textLoginWith"/>
+
+        <TextView
+            android:id="@+id/textLoginWith"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SignUp with"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/BackToLoginButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textSignUpWithLayout"/>
+
+        <LinearLayout
+            android:id="@+id/textSignUpWithLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textLoginWith"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/google_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/google"
+                android:layout_marginEnd="25dp" />
+
+            <ImageView
+                android:id="@+id/linkedIn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/linkedin"/>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

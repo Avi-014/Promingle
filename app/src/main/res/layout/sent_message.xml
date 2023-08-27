@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/chooseImg"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="8dp">
+
+                <TextView
+                    android:id="@+id/senderMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hello how are you :)"
+                    android:background="@drawable/sent_message"
+                    android:textIsSelectable="true"
+                    android:padding="10dp"
+                    android:maxWidth="270dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/senderImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:scaleType="centerCrop"
+                    app:riv_oval="true"
+                    android:padding="2dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/image_section"
+                    android:src="@drawable/myimage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/chooseImg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#1D1D1D"
+            android:src="@drawable/myimage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll"
+            app:layout_constraintWidth_max="270dp"
+            app:layout_constraintHeight_max="270dp"
+            android:visibility="visible"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
