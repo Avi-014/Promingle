@@ -1,11 +1,12 @@
 package com.example.promingle.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.ProgressBar;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.promingle.Model.MessageModel;
 import com.example.promingle.databinding.ActivityImgPreviewBinding;
@@ -42,6 +43,10 @@ public class ImgPreview extends AppCompatActivity {
              binding.choseImg.setImageURI(imgUri);
         }
         binding.imgSendBtn.setOnClickListener(view -> {
+            ProgressDialog pd = new ProgressDialog(this);
+            pd.setMessage("Sending");
+            pd.setCanceledOnTouchOutside(false);
+            pd.show();
             String secs = "" + System.currentTimeMillis() / 1000;
             StorageReference storageReference = storage.getReference().child(secs);
 
@@ -59,11 +64,10 @@ public class ImgPreview extends AppCompatActivity {
                                 .setValue(msgModel).addOnCompleteListener(task -> database.getReference().child("chats")
                                         .child(ReceiverRoom)
                                         .child("Messages")
-                                        .push().setValue(msgModel).addOnCompleteListener(task2 -> {
-                                            finish();
-                                        }));
+                                        .push().setValue(msgModel).addOnCompleteListener(task2 -> finish()));
                     });
                 }});
         });
+        binding.imgCancelBtn.setOnClickListener(view -> finish());
     }
 }
